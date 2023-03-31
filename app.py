@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify ,request
 from database import engine, load_jobs_from_db, load_job_from_db
 from sqlalchemy import create_engine, text
 
@@ -25,6 +25,11 @@ def show_job(id):
     return "Not Found", 404
 
   return render_template('jobpage.html', job=job)
+
+@app.route("/job/<id>/apply")
+def apply_to_job(id):
+  data = request.args
+  return jsonify(data)
 
 
 if __name__ == '__main__':
