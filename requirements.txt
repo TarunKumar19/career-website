@@ -1,2 +1,4 @@
 Flask
 gunicorn  #Production
+sqlalchemy
+pymysql
