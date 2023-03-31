@@ -1,5 +1,5 @@
 from flask import Flask, render_template, jsonify
-from database import engine, load_jobs_from_db
+from database import engine, load_jobs_from_db, load_job_from_db
 from sqlalchemy import create_engine, text
 
 app = Flask(__name__)
@@ -36,6 +36,12 @@ def hello():
 @app.route("/api/jobs")
 def list_jobs():
   return jsonify(JOBS)
+
+
+@app.route("/jobs/<id>")
+def show_job(id):
+  job = load_jobs_from_db()
+  return render_template('jobpage.html', job=JOBS)
 
 
 if __name__ == '__main__':
