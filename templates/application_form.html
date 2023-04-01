@@ -1,6 +1,6 @@
 <h4>Application form</h4>
 
-<form action="/job/{{job['id']}}/apply">
+<form action="/job/{{job['id']}}/apply" method='post'>
   <div class="mb-2">
     <label>Full Name</label><br>
     <input type="text" name="full_name" placeholder = "Tarun Kumar"><br>
@@ -16,5 +16,19 @@
     <input type ="text" name="linkedin_url" placeholder="https://linkden.com/tarun"><br>
   </div>
 
+  <div>
+    <label>Education</label><br>
+    <textarea name='education'></textarea>
+  </div>
+
+  <div>
+    <label>Work Experiance</label><br>
+  <textarea name="work_experiance"></textarea>
+</div>
+  <div class="mb-2">
+    <label>Resume URL</label><br>
+    <input type ="text" name="resume_url"">
+    
+  </div>
   <input type="submit">
 </form>
